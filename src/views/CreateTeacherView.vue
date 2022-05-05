@@ -1,8 +1,8 @@
 <template>
-    <div class="container">
+   <div class="container">
     <div class="create-post">
         <h4>Добавить нового учителя</h4>
-        <form method="POST">
+       
             <input type="string" class="form-control" placeholder="Введите фамилию"        name="fam"  v-model="teacherdata.Фамилия">
             <input type="string" class="form-control" placeholder="Введите имя"            name="name" v-model="teacherdata.Имя">
             <input type="string" class="form-control" placeholder="Введите отчество"       name="oth"  v-model="teacherdata.Отчество">
@@ -15,7 +15,7 @@
                 <div class="input-group-append">
                    <input @click="CreateTeacher(); getteacher()" type="submit" value="Добавить">
                 </div>
-        </form>
+        
     </div>
 </div>
 

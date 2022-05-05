@@ -12,21 +12,21 @@
       <th scope="col">Номер телефона</th>
       <th scope="col">Стаж</th>
       <th scope="col">Адрес</th>
-      <th><a href="/CreateTeacher" target="_self" class="nav-link text-light"><i class="fas fa-pen"></i> Добавить</a></th>
+      <th><a href="/createteacher" target="_self" class="nav-link text-light"><i class="fas fa-pen"></i> Добавить</a></th>
     </tr>
   </thead>
   <tbody>
     <tr v-for="teacher in teachers" :key="teacher">
       <th scope="row">{{teacher.id}}</th>
-      <td>{{teacher.Фамилия}}</td>
-      <td>{{teacher.Имя}}</td>
-      <td>{{teacher.Отчество}}</td>
-      <td>{{teacher.Дата_рождения}}</td>
-      <td>{{teacher.Должность}}</td>
-      <td>{{teacher.Зарплата}}</td>
-      <td>{{teacher.Номер_телефона}}</td> 
-      <td>{{teacher.Стаж}}</td>
-      <td>{{teacher.Адрес}}</td>
+      <td>{{ teacher.Фамилия}}</td>
+      <td>{{ teacher.Имя}}</td>
+      <td>{{ teacher.Отчество}}</td>
+      <td>{{ teacher.Дата_рождения}}</td>
+      <td>{{ teacher.Должность}}</td>
+      <td>{{ teacher.Зарплата}}</td>
+      <td>{{ teacher.Номер_телефона}}</td> 
+      <td>{{ teacher.Стаж}}</td>
+      <td>{{ teacher.Адрес}}</td>
         <td>
           
         </td>       
@@ -48,6 +48,7 @@ export default {
             let result = await fetch ("http://localhost:3000/teacher");
             this.teachers = await result.json();
         },
+        
     },
     mounted() {
         this.getteacher();

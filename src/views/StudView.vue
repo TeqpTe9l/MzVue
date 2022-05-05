@@ -12,7 +12,7 @@
       <th scope="col">Класс</th>
       <th scope="col">Балл учащегося</th>
       <th scope="col">Срок обучения</th>
-      <th><a href="/CreateStud" target="_self" class="nav-link text-light"><i class="fas fa-pen"></i> Добавить</a></th>
+      <th><a href="/createstud" target="_self" class="nav-link text-light"><i class="fas fa-pen"></i> Добавить</a></th>
     </tr>
   </thead>
   <tbody>
@@ -48,16 +48,7 @@ export default {
             let result = await fetch ("http://localhost:3000/stud");
             this.studs = await result.json();
         },
-        async CreateStud() {
-            fetch("http://localhost:3000/stud/CreateStud", {
-                method: "POST",
-                headers: {
-                    accept: "application/json",
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(this.studdata),
-            });
-        },
+        
     },
     mounted() {
         this.getstud();
