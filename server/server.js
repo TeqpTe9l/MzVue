@@ -30,6 +30,13 @@ fastify.post("/stud/CreateStud", async(req, res) => {
     });
 });
 
+fastify.get("/stud/DeleteStud/:id", async(req, res) => {
+    pool.query("DELETE FROM Mzstud WHERE id=?", [req.params.id],
+        function(err, data) {
+            if (err) return console.log(err);
+        });
+});
+
 fastify.get("/teacher", async(req, res) => {
     pool.query("SELECT * FROM Mzteacher", (err, result) => {
         if (err) return console.log(err)
@@ -44,6 +51,13 @@ fastify.post("/teacher/CreateTeacher", async(req, res) => {
         if (err) return console.log(err);
         res.send(data)
     });
+});
+
+fastify.get("/teacher/DeleteTeacher/:id", async(req, res) => {
+    pool.query("DELETE FROM Mzteacher WHERE id=?", [req.params.id],
+        function(err, data) {
+            if (err) return console.log(err);
+        });
 });
 
 const start = async() => {

@@ -1,5 +1,6 @@
 <template>
-    <table class="table table-striped table-dark">
+<div class="container">
+<table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -28,11 +29,12 @@
       <td>{{ stud.Балл_учащегося}}</td>
       <td>{{ stud.Срок_обучения}}</td>
         <td>
-         
+            <input @click="DeleteStud(stud.id); getstud();" type="submit" value="Удалить"> 
         </td>       
     </tr>
   </tbody>
 </table>
+</div>
 </template>
 
 <script>
@@ -48,7 +50,9 @@ export default {
             let result = await fetch ("http://localhost:3000/stud");
             this.studs = await result.json();
         },
-        
+        async DeleteStud(id){
+          await fetch ("http://localhost:3000/stud/DeleteStud/" + id);
+        }
     },
     mounted() {
         this.getstud();

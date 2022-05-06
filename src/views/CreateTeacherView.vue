@@ -8,10 +8,10 @@
             <input type="string" class="form-control" placeholder="Введите отчество"       name="oth"  v-model="teacherdata.Отчество">
             <input type="date"   class="form-control" placeholder="Введите дату рождения"  name="dr"   v-model="teacherdata.Дата_рождения">
             <input type="double" class="form-control" placeholder="Введите должность"      name="dol"  v-model="teacherdata.Должность">
-            <input type="string" class="form-control" placeholder="Введите зарплату"       name="zp"   v-model="teacherdata.Заплата">
+            <input type="string" class="form-control" placeholder="Введите зарплату"       name="zp"   v-model="teacherdata.Зарплата">
             <input type="string" class="form-control" placeholder="Введите номер телефона" name="nom"  v-model="teacherdata.Номер_телефона">
             <input type="string" class="form-control" placeholder="Введите стаж"           name="sta"  v-model="teacherdata.Стаж">
-            <input type="string" class="form-control" placeholder="Введите Адрес"          name="adr"  v-model="teacherdata.Адрес">
+            <input type="string" class="form-control" placeholder="Введите aдрес"          name="adr"  v-model="teacherdata.Адрес">
                 <div class="input-group-append">
                    <input @click="CreateTeacher(); getteacher()" type="submit" value="Добавить">
                 </div>
